@@ -1,0 +1,30 @@
+{% extends "Home/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+  FreestyleLogin
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6 mt-5 ">
+            <h2>Login here</h2>
+            <form  method="post" >{% csrf_token %}
+                <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" name="username" placeholder="Username">
+                    </div><br>
+                    <div class="col">
+                      <input type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'Home/base.html' %}
+
+{% block title %}Freestyle<sup>earning</sup>{{ category }}{% endblock %}
+{% block content %}
+       <!-- Product Cart Start -->
+   <div class="container">
+    <div class=" w-100 mt-4">
+        <h4 class="d-block" >Recently Works {{ category }}</h4>
+        <div class="d-flex flex-wrap justify-content-between">
+            {% for works in works %}
+            <!-- Product Cart Start -->
+            <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
+                {% if works.worksimage_set.exists %}
+                <img height="200" class="card-img-top" src="{{ works.worksimage_set.all.first.image.url }}" alt="...">
+                {% else %}
+                <img height="200" class="card-img-top" src="{{ works.worksimage_set.all.first.image.url }}" alt="...">
+                {% endif %}
+                <div class="card-body">
+                    <h6 class="align-center card-title">{{works.title}}</h6>
+                    <span class="center card-text"><small><b>from: </b>{{works.price1}}{{ works.price_type }} <b>to</b>
+                        {{ works.price2 }}{{ works.price_type }}</small></span> <br>
+                    <div class="buttons d-flex justify-content-between">
+                        <i class="bi bi-bookmark-fill"></i>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Product Cart End -->
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!-- Product Cart End -->
+{% endblock content %}
