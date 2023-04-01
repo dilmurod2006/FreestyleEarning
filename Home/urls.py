@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import HomeView, CategoryView
+from .views import IndexView, CategoryView
 
-app_name = 'Home'
-
+app_name = 'Home' #=> Home:index
 urlpatterns = [
-    path('', HomeView.as_view(), name='index'),
-    path('<str:category_name>/category/', CategoryView.as_view(), name='category'),
+    path('', IndexView.as_view(), name='index'),
+    path('<str:category_name>/category', CategoryView.as_view(), name='category'),
 ]
