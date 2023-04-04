@@ -17,7 +17,7 @@ class IndexView(View):
         q = request.GET.get('q', '')
         if q:
             products = products.filter(title__icontains=q)
-        return render(request, "Home/home.html", {'products': products})
+        return render(request, "Home/index.html", {'products': products})
 
 
 class CategoryView(View):
