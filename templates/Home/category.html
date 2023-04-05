@@ -7,13 +7,13 @@
     <div class=" w-100 mt-4">
         <h4 class="d-block" >Recently Works {{ category }}</h4>
         <div class="d-flex flex-wrap justify-content-between">
-            {% for works in works %}
+            {% for works in products %}
             <!-- Product Cart Start -->
             <div class="card border border-0 shadow-sm d-inline-block m-1 mt-3" style="width: 16.5rem;" >
                 {% if works.worksimage_set.exists %}
-                <img height="200" class="card-img-top" src="{{ works.worksimage_set.all.first.image.url }}" alt="...">
+                <img width="150" height="200" class="card-img-top" src="{{ works.productimage_set.all.first.image.url }}" alt="...">
                 {% else %}
-                <img height="200" class="card-img-top" src="{{ works.worksimage_set.all.first.image.url }}" alt="...">
+                <img height="200" class="card-img-top" src="{{ works.productimage_set.all.first.image.url }}" alt="...">
                 {% endif %}
                 <div class="card-body">
                     <h6 class="align-center card-title">{{works.title}}</h6>
