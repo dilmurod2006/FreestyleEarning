@@ -1,6 +1,6 @@
 {% extends "Home/base.html" %}
 {% block title %}
-  E-Bazar - {{customuser}}
+  Freestyle - {{customuser}}
 {% endblock title %}
 {% block content %}
 <div class="container">
@@ -18,8 +18,7 @@
                     <a class="btn btn-danger" href="{% url 'password_change' %}">Update Password</a>
                     {% endif %}
                     <a class="btn btn-primary" href="mailto:{{customuser.email}}">Email</a>
-                    <a class="btn btn-primary" href="tel:{{customuser.phone_number}}">Call</a>
-                    <a class="btn btn-primary" href="http://t.me/@{{customuser.tg_username}}">Telegram</a>
+                  <a class="btn btn-primary" href="tel:{{customuser.phone_number}}">Call</a>
                 </div>
             </div>
         </div>
